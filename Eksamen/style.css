@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+:root {
+    --dark-gray: #333;
+    --primary-color: #007bff;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 10px;
+}
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    outline: none;
+    width: 100%;
+    padding-right: 30px;
+    box-sizing: border-box;
+}
+
+.search-bar button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-bar button i {
+    font-size: 15px;
+    color: var(--dark-gray);
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.left-menu, .right-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 0;
+    text-align: center;
+}
+
+.left-menu li a, .right-menu li a {
+    text-decoration: none;
+    color: var(--dark-gray);
+    padding: 5px 0;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.logo {
+    font-size: 24px;
+    color: var(--dark-gray);
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+    padding: 0 15px;
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.icons {
+    list-style: none;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+    flex-direction: column;
+}
+
+.icons i {
+    font-size: 20px;
+    color: var(--dark-gray);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+#banner-section {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slider-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+}
+
+.slider-frame {
+    flex: 0 0 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slider-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(239, 235, 240, 0.5);
+    border: none;
+    padding: 15px;
+    color: black;
+    font-size: 15px;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 50%;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+@media (min-width: 768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .search-bar {
+        width: 250px;
+    }
+
+    .navbar {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .left-menu, .right-menu {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 28px;
+    }
+
+    .icons {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    #banner-section {
+        height: 500px;
+    }
+
+    .slider-container {
+        overflow-x: scroll;
+    }
+}
+
+@media (min-width: 1024px) {
+    header {
+        padding: 20px 40px;
+        justify-content: space-between;
+    }
+
+    .search-bar {
+        width: 300px;
+    }
+
+    .navbar {
+        gap: 30px;
+    }
+
+    .logo {
+        font-size: 32px;
+    }
+
+    .logo a:hover {
+        color: var(--primary-color);
+        transition: color 0.3s ease;
+    }
+
+    .icons {
+        gap: 20px;
+    }
+
+    .icons i:hover {
+        color: var(--primary-color);
+        transform: scale(1.2);
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    #banner-section {
+        height: 600px;
+    }
+
+    button.prev:hover, button.next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+        transform: scale(1.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+}

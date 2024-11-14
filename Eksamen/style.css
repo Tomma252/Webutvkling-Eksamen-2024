@@ -26,6 +26,21 @@ header {
     padding: 10px 20px;
 }
 
+.skip-link {
+    display: none;
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background-color: #007bff;
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    transition: top 0.3s ease;
+}
+.skip-link:focus {
+    top: 10px;
+}
+
 .search-bar {
     display: flex;
     align-items: center;
@@ -147,11 +162,6 @@ header {
     height: 100%;
     position: relative;
 }
-.slider-frame {
-    flex: 0 0 100%;
-    height: 100%;
-    position: relative;
-}
 
 
 .slider-frame img {
@@ -207,10 +217,16 @@ button.next {
     max-width: 300px;
 }
 
-.banner-content.left-align {
+.banner-content.left-align,
+.banner-content.left-align2 {
     left: 20px;
     right: auto;
     text-align: left;
+}
+
+.banner-content.left-align .banner-button {
+    background-color: black;
+    color: white;
 }
 
 .banner-content h2 {
@@ -232,20 +248,48 @@ button.next {
     font-weight: bolder;
     text-decoration: none;
     font-size: 14px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 15px;
 }
 
 /* popular-products seksjon */
 
 #popular-products {
+    margin-top: 50px;
     padding: 40px 20px;
 }
 
 #popular-products h2 {
     text-align: center;
-    font-size: 2em;
+    font-size: 3em;
+    margin-bottom: 40px;
+}
+
+#popular-products p {
+    text-align: center;
     margin-bottom: 30px;
+}
+
+.product-filter {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+.product-button-selected,
+.product-button {
+    padding: 10px 20px;
+    color: black;
+    font-size: 15px;
+    border: 1px solid black;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.product-button-selected {
+    background-color: #333;
+    color: white;
 }
 
 .products-grid {
@@ -265,6 +309,24 @@ button.next {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+}
+
+.heart-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    color: white;
+    background-color: grey;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .product-card img {
@@ -272,17 +334,24 @@ button.next {
     border-radius: 30px;
 }
 
-.product-card h3 {
-    font-size: 1.5em;
-    margin-top: 10px;
-    display: inline-block;
+.product-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
-.product-card span.price {
+.product-card h3 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.product-card .price {
     font-size: 1.2em;
     font-weight: bold;
     color: #333;
-    margin-left: 10px;
 }
 
 .product-card:hover {
@@ -299,17 +368,7 @@ button.next {
     }
 
     .skip-link {
-        position: absolute;
-        top: -40px;
-        left: 0;
-        background-color: #007bff;
-        color: white;
-        padding: 8px;
-        text-decoration: none;
-        transition: top 0.3s ease;
-    }
-    .skip-link:focus {
-        top: 10px;
+        display: block;
     }
 
     .search-bar {
@@ -375,13 +434,12 @@ button.next {
         gap: 30px;
     }
 
-    .logo {
-        font-size: 32px;
+    .navbar .menu li a:hover {
+        text-decoration: underline;
     }
 
-    .logo a:hover {
-        color: var(--primary-color);
-        transition: color 0.3s ease;
+    .logo {
+        font-size: 32px;
     }
 
     .icons {
@@ -400,12 +458,6 @@ button.next {
         height: 600px;
     }
 
-    button.prev:hover, button.next:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-        transform: scale(1.1);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
-
     .banner-content {
         right: 60px;
         max-width: 400px;
@@ -415,12 +467,16 @@ button.next {
         font-size: 35px;
     }
 
-    .banner-button:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
-
     .products-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .product-button:hover {
+        background-color: gray;
+    }
+
+    .heart-icon:hover {
+        background-color: red;
+        color: white;
     }
 }

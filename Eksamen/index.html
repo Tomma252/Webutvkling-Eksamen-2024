@@ -13,7 +13,7 @@
 
     <header class="wrapper">
         <form class="search-bar" role="search">
-            <input type="text" placeholder="Søk her" aria-label="Søk">
+            <input type="text" placeholder="Søk her" aria-label="Søk etter produkter">
             <button type="submit">
                 <i class="fa-solid fa-magnifying-glass"></i>
             </button>
@@ -61,7 +61,7 @@
                 </li>
                 <li class="slider-frame">
                     <img src="./img/bilde1.jpg" alt="Bilde av spesialtilbud">
-                    <article class="banner-content">
+                    <article class="banner-content left-align2">
                         <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
                         <p>Aenean aliquet felis nec lobortis eleifend. Vivamus consectetur posuere justo, vel posuere justo ornare ac. Nullam euismod mauris ultrices odio cursus maximus.</p>
                         <a href="#popular-products" class="banner-button">LES MER</a>
@@ -78,47 +78,73 @@
 
         <section id="popular-products">
             <h2>Våre mest populære produkter</h2>
+            <aside><p>Oppdag det beste av det beste</p></aside>
+
+            <aside class="product-filter">
+                <button class="product-button-selected">New Product</button>
+                <button class="product-button">Special Price</button>
+                <button class="product-button">Best Sellers</button>
+            </aside>
+
             <ul class="products-grid">
                 <li>
                     <article class="product-card">
+                        <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
                         <img src="./img/bilde2.jpg" alt="Produkt 1">
-                        <h3>Product name</h3>
-                        <span class="price">kr 1999</span>
+                        <span class="product-info">
+                            <h3>Product name</h3>
+                            <span class="price">kr 1999</span>
+                        </span>
                     </article>
                 </li>
                 <li>
                     <article class="product-card">
-                        <img src="./img/bilde2.jpg" alt="Produkt 1">
-                        <h3>Product name</h3>
-                        <span class="price">kr 1999</span>
+                        <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
+                        <img src="./img/bilde2.jpg" alt="Produkt 2">
+                        <span class="product-info">
+                            <h3>Product name</h3>
+                            <span class="price">kr 1999</span>
+                        </span>
                     </article>
                 </li>
                 <li>
                     <article class="product-card">
-                        <img src="./img/bilde2.jpg" alt="Produkt 1">
-                        <h3>Product name</h3>
-                        <span class="price">kr 1999</span>
+                        <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
+                        <img src="./img/bilde2.jpg" alt="Produkt 3">
+                        <span class="product-info">
+                            <h3>Product name</h3>
+                            <span class="price">kr 1999</span>
+                        </span>
                     </article>
                 </li>
                 <li>
                     <article class="product-card">
-                        <img src="./img/bilde2.jpg" alt="Produkt 1">
-                        <h3>Product name</h3>
-                        <span class="price">kr 1999</span>
+                        <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
+                        <img src="./img/bilde2.jpg" alt="Produkt 4">
+                        <span class="product-info">
+                            <h3>Product name</h3>
+                            <span class="price">kr 1999</span>
+                        </span>
                     </article>
                 </li>
                 <li>
                     <article class="product-card">
-                        <img src="./img/bilde2.jpg" alt="Produkt 1">
-                        <h3>Product name</h3>
-                        <span class="price">kr 1999</span>
+                        <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
+                        <img src="./img/bilde2.jpg" alt="Produkt 5">
+                        <span class="product-info">
+                            <h3>Product name</h3>
+                            <span class="price">kr 1999</span>
+                        </span>
                     </article>
                 </li>
                 <li>
                     <article class="product-card">
-                        <img src="./img/bilde2.jpg" alt="Produkt 1">
-                        <h3>Product name</h3>
-                        <span class="price">kr 1999</span>
+                        <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
+                        <img src="./img/bilde2.jpg" alt="Produkt 6">
+                        <span class="product-info">
+                            <h3>Product name</h3>
+                            <span class="price">kr 1999</span>
+                        </span>
                     </article>
                 </li>
             </ul>

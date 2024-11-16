@@ -404,8 +404,8 @@ button.next {
 }
 
 .category-list li img {
-    width: auto;
-    height: 250px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
@@ -439,7 +439,207 @@ button.next {
 
 /* Seksjon 4 - anmeldelser/reviews */
 
+#reviews h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 1em;
+}
 
+.reviewers-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.reviewers-list {
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.reviewers-list img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.reviewers-list h3 {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.reviewers-list ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    font-size: 0.7em;
+}
+
+.reviewers-list li {
+    font-size: 1.5em;
+}
+
+.reviewers-list p {
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+/* footer styling */
+
+#footer-contact {
+    padding: 40px 0;
+}
+
+.footer-logo h3 {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
+.footer-kontakt h4, .footer-snarveier h4, #footer-socials h4 {
+    margin-bottom: 2em;
+    font-size: 18px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer p, footer span {
+    margin: 0;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+/* Icon styling */
+footer .fa {
+    margin-right: 2em; /* Space between the icon and text */
+}
+
+/* Flex Layout Styling */
+.wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
+    justify-content: space-between;
+}
+
+.footer-sections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer-kontakt, .footer-snarveier, .footer-socials {
+    flex: 1 1 22%;
+    margin-right: 2%;
+    margin-bottom: 20px;
+}
+
+.footer-kontakt ul li {
+    display: flex;
+    align-items: center;
+}
+
+.footer-kontakt i {
+    font-size: 18px;
+    margin-right: 1em;
+}
+
+.footer-kontakt p {
+    margin-right: 1em;
+    font-weight: bold;
+}
+
+.footer-kontakt span {
+    font-size: 1em;
+}
+
+.footer-socials ul {
+    display: flex;
+    gap: 15px; /* Space between social media icons */
+}
+
+.footer-socials i {
+    font-size: 24px;
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.footer-socials i:hover {
+    color: #00bcd4; /* Change color on hover */
+}
+
+/* Layout Styling */
+.wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allow sections to wrap on smaller screens */
+    justify-content: space-between;
+}
+
+.footer-sections {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-kontakt, .footer-snarveier, .footer-socials {
+    flex: 1 1 22%;
+    margin-right: 2%;
+    margin-bottom: 20px;
+}
+
+/* Adjust the last section to not have extra right margin */
+.footer-socials {
+    margin-right: 0;
+}
+
+/* Contact Section Styling */
+.footer-kontakt ul li {
+    display: flex;
+    align-items: center;
+}
+
+.footer-kontakt i {
+    font-size: 18px;
+    margin-right: 1em;
+}
+
+.footer-kontakt p {
+    margin-right: 1em;
+    font-weight: bold;
+}
+
+.footer-kontakt span {
+    font-size: 14px; /* Make the address, phone, email smaller */
+}
+
+/* Social Media Icons Styling */
+.footer-socials ul {
+    gap: 15px; /* Space between social media icons */
+}
+
+.footer-socials i {
+    font-size: 24px;
+}
 
 @media (min-width: 768px) {
     header {
@@ -500,13 +700,8 @@ button.next {
         font-size: 16px;
     }
 
-    .category-list li img {
-        width: 100%;
-        height: 100%;
-    }
-
-    .category-list {
-        grid-template-columns: repeat(2, 1fr); /* Two columns for medium screens */
+    .reviewers-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -524,7 +719,8 @@ button.next {
         gap: 30px;
     }
 
-    .navbar .menu li a:hover {
+    .navbar .menu li a:hover,
+    footer a:hover {
         text-decoration: underline;
     }
 
@@ -570,29 +766,16 @@ button.next {
         color: white;
     }
 
-    /* Her brukte jeg ChatGPT for å bruke pseudo-klassen ::before slik at det ikke påvirker html'en (note to self - finn referanse) */
-.category-list li::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(155, 155, 155, 0.4);
-    z-index: 0;
-}
-
     .category-list {
         display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 equal-width columns */
-        grid-template-rows: 250px 250px 250px; /* Fixed row heights for two rows */
-        grid-auto-flow: dense; /* Ensure grid items fill gaps efficiently */
-        gap: 20px; /* Space between items */
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 250px 250px 250px;
+        grid-auto-flow: dense;
+        gap: 20px;
     }
 
     .category-list li img {
         width: auto;
-        height: 100%;
     }
 
     /* Plaserer bildene i grid celler */
@@ -619,5 +802,24 @@ button.next {
     #h2-3 {
         grid-column: 3;
         grid-row: 3;
+    }
+
+    #reviews h2 {
+        text-align: left;
+    }
+
+    .reviewers-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .footer-sections {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .footer-kontakt, .footer-snarveier, .footer-socials {
+        flex: 1 1 100%;
+        margin-right: 0;
+        margin-bottom: 30px;
     }
 }

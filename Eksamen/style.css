@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 :root {
@@ -255,8 +255,7 @@ button.next {
 /* popular-products seksjon */
 
 #popular-products {
-    margin-top: 50px;
-    padding: 40px 20px;
+    margin-top: 1em;
 }
 
 #popular-products h2,
@@ -295,7 +294,7 @@ button.next {
     color: white;
 }
 
-.products-grid {
+#products-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
@@ -341,7 +340,7 @@ button.next {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 30px;
     box-sizing: border-box;
 }
 
@@ -350,10 +349,13 @@ button.next {
     margin: 0;
 }
 
+.product-info a {
+    text-decoration: none;
+    color: black;
+}
+
 .product-card .price {
     font-size: 1em;
-    font-weight: bold;
-    color: #333;
 }
 
 .stars-review {
@@ -383,10 +385,10 @@ button.next {
 /* populære kategorier */
 
 #popular-categories {
-    padding: 40px 20px;
+    margin-top: 1em;
 }
 
-.category-list {
+#category-grid {
     display: grid;
     gap: 20px;
     padding: 0;
@@ -395,7 +397,7 @@ button.next {
     grid-template-columns: 1fr;
 }
 
-.category-list li {
+#category-grid li {
     display: block;
     overflow: hidden;
     width: 100%;
@@ -404,7 +406,7 @@ button.next {
     border-radius: 20px;
 }
 
-.category-list li img {
+#category-grid li img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -413,7 +415,7 @@ button.next {
 
 
 /* Her brukte jeg ChatGPT for å bruke pseudo-klassen ::before slik at det ikke påvirker html'en (note to self - finn referanse) */
-.category-list li::before {
+#category-grid li::before {
     content: '';
     position: absolute;
     top: 0;
@@ -424,8 +426,7 @@ button.next {
     z-index: 0;
 }
 
-/* Tekst over bilde */
-.category-list li .category-text {
+#category-grid li .category-text {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -440,6 +441,10 @@ button.next {
 
 /* Seksjon 4 - anmeldelser/reviews */
 
+#reviews {
+    margin-bottom: 1em;
+}
+
 #reviews h2 {
     text-align: center;
     font-size: 2.5em;
@@ -450,7 +455,6 @@ button.next {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-    padding: 20px;
 }
 
 .reviewers-list {
@@ -499,16 +503,17 @@ button.next {
 
 /* footer styling */
 
-
 .footer-logo {
+    border-top: 3px solid #adacac;
     align-items: center;
     text-align: center;
-    margin-bottom: 3em;
+    margin: 3em 0;
+    padding-top: 3em;
 }
 
 .footer-logo h3 {
     font-size: 2em;
-    margin-bottom: 1em;
+    margin-bottom: 0.5em;
 }
 
 .footer-kontakt h4, .footer-snarveier h4, .footer-socials h4 {
@@ -530,18 +535,15 @@ footer p, footer span {
     margin: 0;
 }
 
-/*footer a {
-    text-decoration: none;
-}*/
-
 .footer-sections {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 20px;
     width: 100%;
+    gap: 20px;
+    margin-bottom: 5em;
 }
 
 .footer-kontakt ul li {
@@ -691,7 +693,7 @@ footer p, footer span {
         font-size: 35px;
     }
 
-    .products-grid {
+    #products-grid {
         grid-template-columns: repeat(3, 1fr);
     }
 
@@ -704,16 +706,12 @@ footer p, footer span {
         color: white;
     }
 
-    .category-list {
+    #category-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: 250px 250px 250px;
         grid-auto-flow: dense;
         gap: 20px;
-    }
-
-    .category-list li img {
-        width: auto;
     }
 
     /* Plaserer bildene i grid celler */

@@ -22,14 +22,14 @@
         <nav class="navbar" aria-label="Hovedmeny">
             <ul class="menu left-menu">
                 <li><a href="index.html">Hjem</a></li>
-                <li><a href="#popular-products">Produkter</a></li>
+                <li><a href="#products-grid">Produkter</a></li>
             </ul>
             
             <h1 class="logo"><a href="index.html">Logo</a></h1>
             
             <ul class="menu right-menu">
-                <li><a href="#popular-categories">Kategorier</a></li>
-                <li><a href="#footer-contact">Kontakt oss</a></li>
+                <li><a href="#category-grid">Kategorier</a></li>
+                <li><a href="#footer-kontaktoss">Kontakt oss</a></li>
             </ul>
         </nav>
         
@@ -52,7 +52,7 @@
                     </article>
                 </li>
                 <li class="slider-frame">
-                    <img src="./img/bilde1.jpg" alt="Bilde av nye produkter">
+                    <img src="https://picsum.photos/1200/500" alt="Bilde av nye produkter">
                     <article class="banner-content left-align">
                         <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
                         <p>Aenean aliquet felis nec lobortis eleifend. Vivamus consectetur posuere justo, vel posuere justo ornare ac. Nullam euismod mauris ultrices odio cursus maximus.</p>
@@ -60,7 +60,7 @@
                     </article>
                 </li>
                 <li class="slider-frame">
-                    <img src="./img/bilde1.jpg" alt="Bilde av spesialtilbud">
+                    <img src="https://picsum.photos/1200/500" alt="Bilde av spesialtilbud">
                     <article class="banner-content left-align2">
                         <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</h2>
                         <p>Aenean aliquet felis nec lobortis eleifend. Vivamus consectetur posuere justo, vel posuere justo ornare ac. Nullam euismod mauris ultrices odio cursus maximus.</p>
@@ -86,13 +86,13 @@
                 <button class="product-button" aria-label="Best sellers">Best Sellers</button>
             </aside>
 
-            <ul class="products-grid">
+            <ul id="products-grid">
                 <li>
                     <article class="product-card">
                         <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
                         <img src="./img/bilde2.jpg" alt="Produkt 1">
                         <span class="product-info">
-                            <h3>Product name</h3>
+                            <a href="product.html"><h3>Product name</h3></a>
                             <span class="price">kr 1999</span>
                         </span>
                         <aside class="stars-review" aria-label="stars review count">
@@ -110,9 +110,9 @@
                 <li>
                     <article class="product-card">
                         <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
-                        <img src="./img/bilde2.jpg" alt="Produkt 2">
+                        <img src="https://picsum.photos/500/600" alt="Produkt 2">
                         <span class="product-info">
-                            <h3>Product name</h3>
+                            <a href="product.html"><h3>Product name</h3></a>
                             <span class="price">kr 1999</span>
                         </span>
                         <aside class="stars-review" aria-label="stars review count">
@@ -130,9 +130,9 @@
                 <li>
                     <article class="product-card">
                         <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
-                        <img src="./img/bilde2.jpg" alt="Produkt 3">
+                        <img src="https://picsum.photos/500/600" alt="Produkt 3">
                         <span class="product-info">
-                            <h3>Product name</h3>
+                            <a href="product.html"><h3>Product name</h3></a>
                             <span class="price">kr 1999</span>
                         </span>
                         <aside class="stars-review" aria-label="stars review count">
@@ -150,9 +150,9 @@
                 <li>
                     <article class="product-card">
                         <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
-                        <img src="./img/bilde2.jpg" alt="Produkt 4">
+                        <img src="https://picsum.photos/500/600" alt="Produkt 4">
                         <span class="product-info">
-                            <h3>Product name</h3>
+                            <a href="product.html"><h3>Product name</h3></a>
                             <span class="price">kr 1999</span>
                         </span>
                         <aside class="stars-review" aria-label="stars review count">
@@ -170,9 +170,9 @@
                 <li>
                     <article class="product-card">
                         <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
-                        <img src="./img/bilde2.jpg" alt="Produkt 5">
+                        <img src="https://picsum.photos/500/600" alt="Produkt 5">
                         <span class="product-info">
-                            <h3>Product name</h3>
+                            <a href="product.html"><h3>Product name</h3></a>
                             <span class="price">kr 1999</span>
                         </span>
                         <aside class="stars-review" aria-label="stars review count">
@@ -190,9 +190,9 @@
                 <li>
                     <article class="product-card">
                         <span class="heart-icon"><i class="fa-regular fa-heart"></i></span>
-                        <img src="./img/bilde2.jpg" alt="Produkt 6">
+                        <img src="https://picsum.photos/500/600" alt="Produkt 6">
                         <span class="product-info">
-                            <h3>Product name</h3>
+                            <a href="product.html"><h3>Product name</h3></a>
                             <span class="price">kr 1999</span>
                         </span>
                         <aside class="stars-review" aria-label="stars review count">
@@ -213,25 +213,25 @@
         <section id="popular-categories">
             <h2>Våre mest populære kategorier</h2>
             <aside><p>Oppdag det beste av det beste</p></aside>
-            <ul class="category-list">
+            <ul id="category-grid">
                 <li id="w1-1">
                     <img src="./img/bilde3.jpg" alt="Kategori 1">
                     <span class="category-text">CATEGORY 1</span>
                 </li>
                 <li id="w1-2">
-                    <img src="./img/bilde3.jpg" alt="Kategori 2">
+                    <img src="./img/bilde4.jpg" alt="Kategori 2">
                     <span class="category-text">CATEGORY 2</span>
                 </li>
                 <li id="h-2">
-                    <img src="./img/bilde3.jpg" alt="Kategori 3">
+                    <img src="./img/bilde5.jpg" alt="Kategori 3">
                     <span class="category-text">CATEGORY 3</span>
                 </li>
                 <li id="w-2">
-                    <img src="./img/bilde3.jpg" alt="Kategori 4">
+                    <img src="./img/bilde6.jpg" alt="Kategori 4">
                     <span class="category-text">CATEGORY 4</span>
                 </li>
                 <li id="h2-3">
-                    <img src="./img/bilde3.jpg" alt="Kategori 5">
+                    <img src="https://picsum.photos/500/600" alt="Kategori 5">
                     <span class="category-text">CATEGORY 5</span>
                 </li>
             </ul>
@@ -310,7 +310,7 @@
         </section>
     
         <section class="footer-sections">
-            <section class="footer-kontakt">
+            <section class="footer-kontakt" id="footer-kontaktoss">
                 <article>
                     <ul>
                         <h4>Kontakt</h4>
@@ -342,8 +342,8 @@
                 <article>
                     <ul>
                         <h4>Snarveier</h4>
-                        <li><a href="#popular-products">Produkter</a></li>
-                        <li><a href="#popular-categories">Kategorier</a></li>
+                        <li><a href="#products-grid">Produkter</a></li>
+                        <li><a href="#category-grid">Kategorier</a></li>
                         <li><a href="index.html">Kontakt oss</a></li>
                     </ul>
                 </article>

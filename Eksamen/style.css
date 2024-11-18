@@ -87,19 +87,21 @@ header {
     margin-bottom: 10px;
 }
 
-.left-menu, .right-menu {
+.left-menu,
+.right-menu {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 1em;
     padding: 0;
     text-align: center;
 }
 
-.left-menu li a, .right-menu li a,
+.left-menu li a,
+.right-menu li a,
 .footer-snarveier a {
     text-decoration: none;
-    color: var(--dark-gray);
+    color: black;
     padding: 5px 0;
 }
 
@@ -115,7 +117,7 @@ header {
     font-weight: bold;
     text-align: center;
     margin: 0;
-    padding: 0 15px;
+    padding: 15px;
 }
 
 .logo a {
@@ -126,14 +128,15 @@ header {
 .icons {
     list-style: none;
     display: flex;
-    gap: 12px;
+    gap: 1em;
     margin-bottom: 10px;
-    flex-direction: column;
+    flex-direction: row;
+    padding: 10px;
 }
 
 .icons i {
     font-size: 20px;
-    color: var(--dark-gray);
+    color: black;
     cursor: pointer;
 }
 
@@ -170,17 +173,6 @@ header {
     height: 100%;
     border-radius: 40px;
     object-fit: cover;
-}
-
-.slider-text {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: white;
-    font-size: 24px;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px 20px;
-    border-radius: 5px;
 }
 
 button.prev, button.next {
@@ -238,7 +230,7 @@ button.next {
 .banner-content p {
     font-size: 14px;
     margin-bottom: 15px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .banner-button {
@@ -452,12 +444,15 @@ button.next {
 }
 
 .reviewers-grid {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
     gap: 20px;
+    overflow-x: auto;
+    padding: 20px 0;
 }
 
 .reviewers-list {
+    width: 250px;
+    flex-shrink: 0;
     border: 1px solid #ddd;
     padding: 15px;
     background-color: #f9f9f9;
@@ -465,8 +460,11 @@ button.next {
     text-align: left;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: left;
     justify-content: flex-start;
+    box-sizing: border-box;
+    min-height: 200px;
+    overflow: hidden;
 }
 
 .reviewers-list img {
@@ -486,7 +484,7 @@ button.next {
     list-style-type: none;
     padding: 0;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 5px;
     font-size: 0.7em;
 }
@@ -502,25 +500,6 @@ button.next {
 }
 
 /* footer styling */
-
-.footer-logo {
-    border-top: 3px solid #adacac;
-    align-items: center;
-    text-align: center;
-    margin: 3em 0;
-    padding-top: 3em;
-}
-
-.footer-logo h3 {
-    font-size: 2em;
-    margin-bottom: 0.5em;
-}
-
-.footer-kontakt h4, .footer-snarveier h4, .footer-socials h4 {
-    margin-bottom: 1em;
-    font-size: 18px;
-    text-transform: uppercase;
-}
 
 footer ul {
     list-style: none;
@@ -546,6 +525,27 @@ footer p, footer span {
     margin-bottom: 5em;
 }
 
+.footer-logo {
+    border-top: 3px solid #adacac;
+    align-items: center;
+    text-align: center;
+    margin: 3em 0;
+    padding-top: 3em;
+}
+
+.footer-logo h3 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+}
+
+.footer-kontakt h4,
+.footer-snarveier h4,
+.footer-socials h4 {
+    margin-bottom: 1em;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
 .footer-kontakt ul li {
     display: flex;
     align-items: center;
@@ -566,8 +566,7 @@ footer p, footer span {
 }
 
 .footer-snarveier ul li {
-    display: flex;
-    align-items: center;
+    padding: 5px;
 }
 
 .footer-socials ul li {
@@ -611,7 +610,6 @@ footer p, footer span {
     }
 
     .icons {
-        flex-direction: row;
         gap: 15px;
     }
 
@@ -640,8 +638,37 @@ footer p, footer span {
         font-size: 16px;
     }
 
+    .product-button:hover {
+        background-color: gray;
+    }
+
+    .heart-icon:hover {
+        background-color: red;
+        color: white;
+    }
+
     .reviewers-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-sections {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .footer-kontakt h4, 
+    .footer-snarveier h4, 
+    .footer-socials h4 {
+        text-align: left;
+    }
+
+    .footer-kontakt ul, 
+    .footer-snarveier ul, 
+    .footer-socials ul {
+        margin: 0 auto;
+        display: inline-block;
     }
 }
 
@@ -697,15 +724,6 @@ footer p, footer span {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .product-button:hover {
-        background-color: gray;
-    }
-
-    .heart-icon:hover {
-        background-color: red;
-        color: white;
-    }
-
     #category-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -750,25 +768,5 @@ footer p, footer span {
 
     .footer-logo {
         text-align: left;
-    }
-
-    .footer-sections {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .footer-kontakt h4, 
-    .footer-snarveier h4, 
-    .footer-socials h4 {
-        text-align: left;
-    }
-
-    .footer-kontakt ul, 
-    .footer-snarveier ul, 
-    .footer-socials ul {
-        margin: 0 auto;
-        display: inline-block;
     }
 }

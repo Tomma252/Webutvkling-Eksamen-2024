@@ -56,34 +56,37 @@
         </nav>
 
         <section class="product-main">
-            <aside class="images">
-                <section class="small-images">
+            <aside class="produktside-images">
+                <section class="produktside-small-images">
                     <img src="./img/bilde7.jpg" alt="Small Image 1">
                     <img src="./img/bilde7.jpg" alt="Small Image 2">
                     <img src="./img/bilde7.jpg" alt="Small Image 3">
                 </section>
-                <figure class="large-image">
+                <figure class="produktside-large-image">
                     <img src="./img/bilde7.jpg" alt="Large Image">
                 </figure>
             </aside>
-            <article class="product-info">
-                    <h1>Product Name</h1>
-                <p>Product Description</p>
-                <form>
-                    <label for="size">Size:</label>
-                    <select id="size">
+            <article class="produktside-product-info">
+                    <h1>Produktnavn</h1>
+                    <a href="product.html">MERKENAVN</a>
+                    <p>4 999 kr inkl. mva.</p>
+                    <p>Farge: <span id="fet-farge">rosa</span></p>
+                <form id="produkt-form">
+                    <select id="produkt-size">
+                        <option value="placeholder">Velg størrelse</option>
                         <option value="small">Small</option>
                         <option value="medium">Medium</option>
                         <option value="large">Large</option>
                     </select>
-                    <label for="color">Color:</label>
-                    <select id="color">
-                        <option value="red">Red</option>
-                        <option value="blue">Blue</option>
-                        <option value="green">Green</option>
-                    </select>
-                    <button type="submit">Add to Cart</button>
+                    <aside id="handlekurv-knapp">
+                        <button id="produkt-form-button" type="submit">Legg i handlekurv</button>
+                        <button id="add-favoritt-produkt" type="button">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                    </aside>
                 </form>
+            </article>
+            <article class="materiale-vedlikehold">
             </article>
         </section>
     </main>

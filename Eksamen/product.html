@@ -40,7 +40,52 @@
         </ul>
     </header>
 
-    <main>
+    <main class="wrapper">
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+            <ol>
+                <li><a href="index.html">Hjem</a></li>
+                <li>
+                    <i class="fa-solid fa-angle-right"></i>
+                    <a href="index.html#popular-products">Produkter</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-angle-right"></i>
+                    <span aria-current="page">Produktnavn</span>
+                </li>
+            </ol>
+        </nav>
+
+        <section class="product-main">
+            <aside class="images">
+                <section class="small-images">
+                    <img src="./img/bilde7.jpg" alt="Small Image 1">
+                    <img src="./img/bilde7.jpg" alt="Small Image 2">
+                    <img src="./img/bilde7.jpg" alt="Small Image 3">
+                </section>
+                <figure class="large-image">
+                    <img src="./img/bilde7.jpg" alt="Large Image">
+                </figure>
+            </aside>
+            <article class="product-info">
+                    <h1>Product Name</h1>
+                <p>Product Description</p>
+                <form>
+                    <label for="size">Size:</label>
+                    <select id="size">
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                    <label for="color">Color:</label>
+                    <select id="color">
+                        <option value="red">Red</option>
+                        <option value="blue">Blue</option>
+                        <option value="green">Green</option>
+                    </select>
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </article>
+        </section>
     </main>
 
     <footer class="wrapper">
@@ -88,7 +133,7 @@
                         <h4>Snarveier</h4>
                         <li><a href="index.html#products-grid">Produkter</a></li>
                         <li><a href="index.html#category-grid">Kategorier</a></li>
-                        <li><a href="index.html">Kontakt oss</a></li>
+                        <li><a href="#footer-kontaktoss">Kontakt oss</a></li>
                     </ul>
                 </article>
             </section>

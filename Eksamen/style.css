@@ -140,6 +140,8 @@ header {
     cursor: pointer;
 }
 
+/* Forside: banner-section seksjon */
+
 #banner-section {
     position: relative;
     width: 100%;
@@ -244,7 +246,7 @@ button.next {
     border-radius: 15px;
 }
 
-/* popular-products seksjon */
+/* Forside: popular-products seksjon */
 
 #popular-products {
     margin-top: 1em;
@@ -374,7 +376,7 @@ button.next {
     font-weight: bold;
 }
 
-/* populære kategorier */
+/* Forside: popular-categories seksjon */
 
 #popular-categories {
     margin-top: 1em;
@@ -406,7 +408,6 @@ button.next {
 }
 
 
-/* Her brukte jeg ChatGPT for å bruke pseudo-klassen ::before slik at det ikke påvirker html'en (note to self - finn referanse) */
 #category-grid li::before {
     content: '';
     position: absolute;
@@ -431,7 +432,7 @@ button.next {
     pointer-events: none;
 }
 
-/* Seksjon 4 - anmeldelser/reviews */
+/* Forside: Seksjon 4 - anmeldelser/reviews */
 
 #reviews {
     margin-bottom: 1em;
@@ -580,6 +581,132 @@ footer p, footer span {
     color: var(--dark-gray);
 }
 
+/* Produktside: navigasjon */
+
+.breadcrumb {
+    font-size: 1rem;
+    margin: 1em 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 0.5em;
+}
+
+.breadcrumb ol {
+    display: flex;
+    gap: 1em;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb li {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: black;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb i {
+    color: black;
+    margin-right: 0.5em;
+}
+
+.breadcrumb [aria-current="page"] {
+    font-weight: bold;
+    color: #000;
+}
+
+/* Produktside: product-main */
+
+.product-main {
+    display: flex;
+    flex-wrap: wrap; /* Enables wrapping for smaller screens */
+    gap: 1em;
+    padding: 10px; /* Reduced padding */
+}
+
+/* Images Section */
+.images {
+    display: flex;
+    flex: 3; /* Takes up 3 parts of the available space */
+    gap: 1em;
+}
+
+.small-images {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em; /* Reduced gap */
+    flex: 1; /* Takes equal space as the larger image */
+    max-height: 600px; /* Limit the total height */
+}
+
+.small-images img {
+    width: 100%; /* Automatically scales */
+    height: calc((100% - 1em) / 3); /* Total height divided into 3, subtracting gaps */
+    object-fit: contain; /* Ensures images fill the available space */
+}
+
+.large-image {
+    flex: 2; /* Large image takes twice the space of the small images */
+    display: flex;
+    max-height: 600px; /* Limit height for the larger image */
+}
+
+.large-image img {
+    width: 100%; /* Automatically scales */
+    height: 100%; /* Matches the total height of the smaller images */
+    object-fit: contain; /* Ensures the image fills the space */
+}
+
+/* Product Info Section */
+.product-info {
+    flex: 2; /* Adjust product info to take equal or less space */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em; /* Reduced gap */
+    padding: 10px; /* Reduced padding */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-height: 600px; /* Limit total height */
+    overflow-y: auto; /* Add scrolling if content exceeds max height */
+}
+
+.product-info h1 {
+    margin: 0 0 5px; /* Reduced margin */
+}
+
+.product-info p {
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Reduced gap */
+}
+
+button {
+    padding: 8px 16px; /* Smaller button size */
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
 @media (min-width: 768px) {
     header {
         flex-direction: row;
@@ -649,6 +776,14 @@ footer p, footer span {
 
     .reviewers-grid {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    #category-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 250px 250px;
+        grid-auto-flow: dense;
+        gap: 20px;
     }
 
     .footer-sections {

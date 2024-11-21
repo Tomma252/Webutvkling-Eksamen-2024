@@ -611,10 +611,6 @@ footer p, footer span {
     color: black;
 }
 
-.breadcrumb a:hover {
-    text-decoration: underline;
-}
-
 .breadcrumb i {
     color: black;
     margin-right: 0.5em;
@@ -625,37 +621,42 @@ footer p, footer span {
     color: #000;
 }
 
-/* Produktside: product-main */
+/* Produktside: produkt-main */
 
-.product-main {
+.produkt-main {
     display: flex;
     flex-wrap: wrap;
     gap: 1em;
     padding: 10px;
+    justify-content: space-between;
 }
 
+/* Bildecontainer */
 .produktside-images {
     display: flex;
-    flex: 3; /* Takes up 3 parts of the available space */
+    flex: 3;
     gap: 1em;
 }
 
+/* Små bilder */
 .produktside-small-images {
     display: flex;
     flex-direction: column;
     gap: 0.5em;
-    flex: 1; /* Takes equal space as the larger image */
+    flex: 1;
     max-height: 600px;
 }
 
+/* Små bilder */
 .produktside-small-images img {
     width: 100%;
-    height: calc((100% - 1em) / 3); /* Total height divided into 3, subtracting gaps */
+    height: calc((100% - 1em) / 3);
     object-fit: cover;
 }
 
+/* Store bilder */
 .produktside-large-image {
-    flex: 2; /* Large image takes twice the space of the small images */
+    flex: 2;
     display: flex;
     max-height: 600px;
 }
@@ -663,24 +664,29 @@ footer p, footer span {
 .produktside-large-image img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 }
 
-.produktside-product-info {
-    flex: 2; /* Adjust product info to take equal or less space */
+/* Produktinfo */
+.produktside-produkt-info {
+    flex: 2;
     display: flex;
     flex-direction: column;
     gap: 0.5em;
     padding: 10px;
-    max-height: 600px;
-    overflow-y: auto;
+    min-height: 400px; /* Minimum høyde for produktinfo */
+    flex-grow: 1; /* Tillater vekst */
+    flex-shrink: 1; /* Tillater krymping dersom nødvendig */
+    overflow: auto; /* Tillater rulling dersom innholdet blir for stort */
 }
 
-.produktside-product-info h1 {
+/* Hovedtittel */
+.produktside-produkt-info h1 {
     margin-bottom: 1em;
 }
 
-.produktside-product-info a {
+/* Lenkene */
+.produktside-produkt-info a {
     text-decoration: underline;
     color: black;
     margin-bottom: 0.5em;
@@ -690,16 +696,19 @@ footer p, footer span {
     font-weight: bold;
 }
 
+/* Skjemafelt for størrelsevalg */
 #produkt-form {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
+/* Velg størrelse */
 #produkt-size {
     padding: 1em;
 }
 
+/* Knapp for handlekurv */
 #handlekurv-knapp {
     display: flex;
     align-items: center;
@@ -707,6 +716,7 @@ footer p, footer span {
     margin-top: 0.5em;
 }
 
+/* Legg til handlekurv-knapp */
 #produkt-form-button {
     padding: 1em;
     color: white;
@@ -715,6 +725,7 @@ footer p, footer span {
     width: 100%;
 }
 
+/* Legg til favoritt-knapp */
 #add-favoritt-produkt {
     display: flex;
     align-items: center;
@@ -730,8 +741,57 @@ footer p, footer span {
     font-size: 1.5em;
 }
 
-#produkt-form-button:hover {
-    background-color: #0056b3;
+/* Collapse material section */
+.collapse-materiale {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    align-items: center;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    margin-top: 1em;
+    font-size: 1em;
+    cursor: pointer;
+    flex-grow: 0; /* Ingen vekst før åpning */
+    transition: flex-grow 0.3s ease-in-out; /* Smooth overgang */
+}
+
+/* Håndtering av åpnet details-innhold */
+details[open] .collapse-materiale {
+    flex-grow: 1; /* Lar detaljene vokse når de åpnes */
+}
+
+/* Definerer hvordan summary vises */
+details summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0.5em;
+    font-weight: bold;
+}
+
+/* Fjerner standard marker */
+details summary::marker {
+    content: none;
+}
+
+/* Legg til pluss/minus tegn */
+details summary::after {
+    content: "+";
+    font-size: 1.5em;
+    padding-left: 1em;
+}
+
+/* Når det er åpent, endrer tegnene seg til minus */
+details[open] summary::after {
+    content: "-";
+}
+
+/* Håndtering av tekst i detaljer */
+details.collapse-materiale p {
+    margin: 0.5em 0;
 }
 
 @media (min-width: 768px) {
@@ -894,7 +954,7 @@ footer p, footer span {
         gap: 20px;
     }
 
-    /* Plaserer bildene i grid celler */
+    /* Plaserer bildene i grid celler forside */
     #w1-1 {
         grid-column: 1;
         grid-row: 1;
@@ -931,4 +991,117 @@ footer p, footer span {
     .footer-logo {
         text-align: left;
     }
+
+    .breadcrumb a:hover {
+        text-decoration: underline;
+    }
+
+    /*.produkt-main {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        padding: 10px;
+    /*}*/
+    
+    /*.produktside-images {
+        display: flex;
+        flex: 3;
+        gap: 1em;
+    /*}*/
+    
+    /*.produktside-small-images {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        flex: 1;
+        max-height: 600px;
+    /*}*/
+    
+    /*.produktside-small-images img {
+        width: 100%;
+        height: calc((100% - 1em) / 3);
+        object-fit: cover;
+    /*}*/
+    
+    /*.produktside-large-image {
+        flex: 2;
+        display: flex;
+        max-height: 600px;
+    /*}*/
+    
+    /*.produktside-large-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    /*}*/
+    
+    /*.produktside-product-info {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5em;
+        padding: 10px;
+        max-height: 600px;
+    /*}*/
+    
+    /*#produkt-form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    /*}*/
+    
+    /*#handlekurv-knapp {
+        display: flex;
+        align-items: center;
+        gap: 1em;
+        margin-top: 0.5em;
+    /*}*/
+    
+    /*#produkt-form-button {
+        padding: 1em;
+        color: white;
+        background-color: black;
+        border-style: none;
+        width: 100%;
+    /*}*/
+    
+    /*#add-favoritt-produkt {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        width: 40px;
+        border: 1px solid #000;
+        background-color: #fff;
+        cursor: pointer;
+    /*}*/
+    
+    #produkt-form-button:hover {
+        background-color: #0056b3;
+    }
+    
+    /*.collapse-materiale {
+        display: flex;
+        flex-direction: column;
+        padding: 1em;
+        align-items: center;
+        border-top: 1px solid;
+        border-bottom: 1px solid;
+        margin-top: 1em;
+        font-size: 1em;
+        cursor: pointer;
+        pointer-events: none; /* https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events for å indikere at kun "placeholder" linjen er klikkbar for å åpne/lukke */
+    /*}*/
+    
+    /*details summary {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        padding: 0.5em;
+        font-weight: bold;
+        cursor: pointer;
+        pointer-events: all; /* https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events for å indikere at kun "placeholder" linjen er klikkbar for å åpne/lukke */
+    /*}*/
 }

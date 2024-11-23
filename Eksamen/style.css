@@ -623,20 +623,21 @@ footer p, footer span {
 
 .produkt-main {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 1em;
     padding: 10px;
     justify-content: space-between;
 }
 
-/* Bildecontainer */
+/* Bildecontainer (image container) */
 .produktside-images {
     display: flex;
-    flex: 2;
+    flex-direction: row;
     gap: 1em;
+    width: 100%;
 }
 
-/* Små bilder */
+/* Små bilder (small images) */
 .produktside-small-images {
     display: flex;
     flex-direction: column;
@@ -645,17 +646,16 @@ footer p, footer span {
     max-height: 680px;
 }
 
-/* Små bilder */
+/* Small image styles */
 .produktside-small-images img {
     width: 100%;
     height: calc((100% - 1em) / 3);
     object-fit: cover;
 }
 
-/* Store bilder */
+/* Large image */
 .produktside-large-image {
-    flex: 2;
-    display: flex;
+    flex: 2; /* Large image takes up more space */
     max-height: 680px;
 }
 
@@ -676,6 +676,7 @@ footer p, footer span {
     flex-grow: 1;
     flex-shrink: 1;
     overflow: auto;
+    width: 100%;
 }
 
 /* Hovedtittel */
@@ -809,15 +810,15 @@ details.collapse-materiale p {
 
 #produktside-produkter-liste {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
     gap: 1rem;
     list-style: none;
+    overflow-y: auto;
 }
 
 .produktside-produkt-kort {
-    width: 100%;
-    max-width: 400px;
+    min-width: 250px;
     text-align: center;
     position: relative;
 }
@@ -827,6 +828,24 @@ details.collapse-materiale p {
     width: 100%;
     height: auto;
     margin-bottom: 0.5rem;
+}
+
+#produktside-anmeldelse-kort {
+    border-style: solid;
+    border-color: #cec8c8;
+    border-radius: 20px;
+    margin: 1rem;
+}
+
+#produktside-anmeldelse-kort p,
+#anmeldelse-ikoner {
+    margin: 1rem;
+}
+
+/*  handlesiden */
+
+#handlesiden-top-seksjon p i {
+    margin-right: 1rem;
 }
 
 @media (min-width: 768px) {
@@ -1035,6 +1054,17 @@ details.collapse-materiale p {
         background-color: #0056b3;
     }
 
+    #produktside-info-hjerte-hover:hover {
+        color: red;
+    }
+
+    .produktside-small-images,
+    .produktside-large-image {
+        position: sticky;
+        top: 20px;
+        z-index: 10;
+    }
+
     #produktside-liknende-produkter {
         flex-direction: row;
         justify-content: space-between;
@@ -1042,16 +1072,8 @@ details.collapse-materiale p {
         margin: 3rem 0;
     }
 
-    #produktside-produkter-liste {
-        flex-direction: row;
-        justify-content: flex-start;
-        gap: 1rem;
-        overflow-x: auto;
-        width: 100%;
-    }
-
     .produktside-produkt-kort {
-        width: 250px;
+        width: 300px;
     }
     
     .collapse-materiale,
@@ -1063,5 +1085,21 @@ details.collapse-materiale p {
     details summary {
         cursor: pointer;
         pointer-events: all; /* https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events for å indikere at kun "placeholder" linjen er klikkbar for å åpne/lukke */
+    }
+
+    .produkt-main {
+        flex-direction: row;
+        gap: 1em;
+    }
+
+    .produktside-images {
+        display: flex;
+        flex: 2;
+        gap: 1em;
+    }
+
+    .produktside-produkt-info {
+        width: 40%;
+        margin-top: 0;
     }
 }

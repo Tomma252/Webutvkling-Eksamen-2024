@@ -259,7 +259,6 @@ button.next {
     margin-bottom: 40px;
 }
 
-#popular-products p,
 #popular-categories p {
     text-align: center;
     margin-bottom: 30px;
@@ -334,22 +333,15 @@ button.next {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 20px;
     box-sizing: border-box;
 }
 
-.product-card h3 {
-    font-size: 1em;
-    margin: 0;
-}
-
 .product-info a {
+    font-weight: bold;
+    font-size: 1em;
     text-decoration: none;
     color: black;
-}
-
-.product-card .price {
-    font-size: 1em;
 }
 
 .stars-review {
@@ -537,12 +529,11 @@ footer p, footer span {
     margin-bottom: 0.5em;
 }
 
-.footer-kontakt h4,
-.footer-snarveier h4,
-.footer-socials h4 {
+.footer-større-tekst {
     margin-bottom: 1em;
-    font-size: 18px;
+    font-size: 1em;
     text-transform: uppercase;
+    font-weight: bold;
 }
 
 .footer-kontakt ul li {
@@ -555,11 +546,6 @@ footer p, footer span {
     margin-right: 1em;
 }
 
-.footer-kontakt p {
-    margin-right: 1em;
-    font-weight: bold;
-}
-
 .footer-kontakt span {
     font-size: 1em;
 }
@@ -568,10 +554,10 @@ footer p, footer span {
     padding: 5px;
 }
 
-.footer-socials ul li {
+.footer-socials ul.some-ikoner {
     display: flex;
-    align-items: center;
-    gap: 2em;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .footer-socials i {
@@ -848,6 +834,63 @@ details.collapse-materiale p {
     margin-right: 1rem;
 }
 
+#handlesiden-top-seksjon h2 {
+    text-align: center;
+    font-size: 2rem;
+}
+
+#shoppingbag-seksjon {
+    border-style: solid;
+    border-color: #cec8c8;
+}
+
+#handlekurv-liste {
+    display: flex;
+    align-items: flex-start;
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+    gap: 20px;
+}
+
+#handlekurv-liste img {
+    width: 150px;
+    height: 220px;
+}
+
+#shoppingbag-produktnavn {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+#handlesiden-produktnavn-fet {
+    font-weight: bold;
+}
+
+#handlekurv-produkt-valg {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#shoppingbag-ikoner {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#shoppingbag-ikoner i {
+    font-size: 20px;
+    cursor: pointer;
+}
+
 @media (min-width: 768px) {
     header {
         flex-direction: row;
@@ -934,9 +977,7 @@ details.collapse-materiale p {
         gap: 10px;
     }
 
-    .footer-kontakt h4, 
-    .footer-snarveier h4, 
-    .footer-socials h4 {
+    .footer-større-tekst {
         text-align: left;
     }
 

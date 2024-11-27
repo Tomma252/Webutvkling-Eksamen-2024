@@ -26,21 +26,6 @@ header {
     padding: 10px 20px;
 }
 
-.skip-link {
-    display: none;
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background-color: #007bff;
-    color: white;
-    padding: 8px;
-    text-decoration: none;
-    transition: top 0.3s ease;
-}
-.skip-link:focus {
-    top: 10px;
-}
-
 .search-bar {
     display: flex;
     align-items: center;
@@ -140,7 +125,7 @@ header {
     cursor: pointer;
 }
 
-/* Forside: banner-section seksjon */
+/* Forside: banner-section */
 
 #banner-section {
     position: relative;
@@ -158,46 +143,21 @@ header {
     list-style: none;
     padding: 0;
     margin: 0;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    scroll-behavior: smooth;
 }
 
-.slider-frame {
+.slider-frame,
+.slider-frame-1 {
     flex: 0 0 100%;
     height: 100%;
     position: relative;
 }
 
-
-.slider-frame img {
+.slider-frame img,
+.slider-frame-1 img {
     width: 100%;
     height: 100%;
     border-radius: 40px;
     object-fit: cover;
-}
-
-button.prev, button.next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(239, 235, 240, 0.5);
-    border: none;
-    padding: 15px;
-    color: black;
-    font-size: 15px;
-    cursor: pointer;
-    z-index: 2;
-    border-radius: 50%;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-}
-
-button.prev {
-    left: 10px;
-}
-
-button.next {
-    right: 10px;
 }
 
 .banner-content {
@@ -210,6 +170,10 @@ button.next {
     padding: 20px;
     border-radius: 8px;
     max-width: 300px;
+}
+
+.slider-frame-1 {
+    content-visibility: hidden; /* https://developer.mozilla.org/en-US/docs/Web/CSS/content-visibility for å skjule to slider-frames i banneren på mobil. Denne er satt til visibility gjennom media query. */
 }
 
 .banner-content.left-align,
@@ -259,6 +223,7 @@ button.next {
     margin-bottom: 40px;
 }
 
+#popular-products p,
 #popular-categories p {
     text-align: center;
     margin-bottom: 30px;
@@ -615,7 +580,6 @@ footer p, footer span {
     justify-content: space-between;
 }
 
-/* Bildecontainer (image container) */
 .produktside-images {
     display: flex;
     flex-direction: row;
@@ -623,7 +587,6 @@ footer p, footer span {
     width: 100%;
 }
 
-/* Små bilder (small images) */
 .produktside-small-images {
     display: flex;
     flex-direction: column;
@@ -632,16 +595,14 @@ footer p, footer span {
     max-height: 680px;
 }
 
-/* Small image styles */
 .produktside-small-images img {
     width: 100%;
     height: calc((100% - 1em) / 3);
     object-fit: cover;
 }
 
-/* Large image */
 .produktside-large-image {
-    flex: 2; /* Large image takes up more space */
+    flex: 2;
     max-height: 680px;
 }
 
@@ -651,7 +612,6 @@ footer p, footer span {
     object-fit: cover;
 }
 
-/* Produktinfo */
 .produktside-produkt-info {
     flex: 1;
     display: flex;
@@ -665,12 +625,10 @@ footer p, footer span {
     width: 100%;
 }
 
-/* Hovedtittel */
 .produktside-produkt-info h2 {
     margin-bottom: 1em;
 }
 
-/* Lenkene */
 .produktside-produkt-info a {
     text-decoration: underline;
     color: black;
@@ -681,19 +639,16 @@ footer p, footer span {
     font-weight: bold;
 }
 
-/* Skjemafelt for størrelsevalg */
 #produkt-form {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-/* Velg størrelse */
 #produkt-size {
     padding: 1em;
 }
 
-/* Knapp for handlekurv */
 #handlekurv-knapp {
     display: flex;
     align-items: center;
@@ -701,7 +656,6 @@ footer p, footer span {
     margin-top: 0.5em;
 }
 
-/* Legg til handlekurv-knapp */
 #produkt-form-button {
     padding: 1em;
     color: white;
@@ -710,7 +664,6 @@ footer p, footer span {
     width: 100%;
 }
 
-/* Legg til favoritt-knapp */
 #add-favoritt-produkt {
     display: flex;
     align-items: center;
@@ -726,7 +679,6 @@ footer p, footer span {
     font-size: 1.5em;
 }
 
-/* Collapse material seksjon */
 .collapse-materiale {
     display: flex;
     flex-direction: column;
@@ -749,7 +701,6 @@ footer p, footer span {
     cursor: pointer;
 }
 
-/* Definerer hvordan summary vises */
 details summary {
     display: flex;
     justify-content: space-between;
@@ -760,24 +711,20 @@ details summary {
     font-weight: bold;
 }
 
-/* Fjerner standard marker */
 details summary::marker {
     content: none;
 }
 
-/* Legg til pluss/minus tegn */
 details summary::after {
     content: "+";
     font-size: 1.5em;
     padding-left: 1em;
 }
 
-/* Når det er åpent, endrer tegnene seg til minus */
 details[open] summary::after {
     content: "-";
 }
 
-/* Håndtering av tekst i detaljer */
 details.collapse-materiale p {
     margin: 0.5em 0;
 }
@@ -837,58 +784,154 @@ details.collapse-materiale p {
 #handlesiden-top-seksjon h2 {
     text-align: center;
     font-size: 2rem;
+    margin: 1rem 0;
 }
 
-#shoppingbag-seksjon {
+.shoppingbag-seksjon {
     border-style: solid;
     border-color: #cec8c8;
+    border-width: 1px;
+    padding: 1rem;
 }
 
-#handlekurv-liste {
+.shoppingbag-stor-tekst {
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    margin: 2rem;
+}
+
+.handlekurv-liste {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
-    border-bottom: 1px solid #ddd;
-    padding: 20px 0;
+    margin: 2rem;
     gap: 20px;
 }
 
-#handlekurv-liste img {
-    width: 150px;
-    height: 220px;
+.handlekurv-liste img {
+    width: 200px;
+    height: 250px;
 }
 
-#shoppingbag-produktnavn {
+.shoppingbag-produktnavn {
     list-style: none;
-    padding: 0;
-    margin: 0;
-    flex-grow: 1;
+    margin: 2em 0;
 }
 
-#handlesiden-produktnavn-fet {
+.handlesiden-produktnavn-fet {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.handlekurv-produkt-valg {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2em;
+    gap: 1rem;
+}
+
+.størrelse-valg {
+    width: 4rem;
+    height: 3rem;
+    background-color: rgb(235, 234, 234);
+    border-style: none;
+}
+
+.antall-produkter {
+    width: 4rem;
+    height: 3rem;
+}
+
+.shoppingbag-ikoner {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 1rem;
+}
+
+.shoppingbag-ikoner i {
+    font-size: 1.2rem;
+}
+
+.shoppingbag-ikoner button {
+    border-style: none;
+    background-color: white;
+}
+
+#dine-opplysninger {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+}
+
+#dine-opplysninger input,
+#kortbetaling input {
+    width: 100%;
+    height: 2rem;
+    margin-bottom: 1rem;
+}
+
+#dine-opplysninger a {
+    text-align: center;
+}
+
+#dine-opplysninger input,
+#kortbetaling input:not(#Utløpsdato) { /* https://www.w3schools.com/cssref/sel_not.php for å ikke gi datoen fargen.  */
+    color: rgb(107, 107, 107);
+}
+
+.levering-seksjon {
+    border-style: solid;
+    border-color: #cec8c8;
+    border-width: 1px;
+    padding: 1rem;
+}
+
+#levering-tittel {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 2rem;
+    text-transform: uppercase;
+}
+
+.leveringsvalg,
+#kortbetaling {
+    margin: 1rem;
+}
+
+#kort-tekst {
+    text-transform: uppercase;
+    font-size: 1rem;
     font-weight: bold;
 }
 
-#handlekurv-produkt-valg {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
+#shoppingbag-betale {
+    margin: 2rem 0;
+    text-align: center;
+    border-top-style: solid;
+    border-color: #cec8c8;
 }
 
-#shoppingbag-ikoner {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+#shoppingbag-totalsum {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
 }
 
-#shoppingbag-ikoner i {
-    font-size: 20px;
-    cursor: pointer;
+#samtykke {
+    margin: 2rem 0;
+}
+
+#shoppingbag-mva {
+    margin: 1rem 0;
+}
+
+#fullfør-kjøp {
+    width: 100%;
+    height: 2rem;
+    background-color: darkgray;
+    border-style: none;
 }
 
 @media (min-width: 768px) {
@@ -924,12 +967,22 @@ details.collapse-materiale p {
         gap: 15px;
     }
 
+    .icons i {
+        transition: transform 0.3s ease;
+    }
+
+    .icons i:hover {
+        transform: scale(1.4);
+    }
+
     #banner-section {
         height: 500px;
     }
 
     .slider-container {
         overflow-x: scroll;
+        overflow-y: hidden;
+        scroll-behavior: smooth;
     }
 
     .banner-content {
@@ -949,6 +1002,38 @@ details.collapse-materiale p {
         font-size: 16px;
     }
 
+    .slider-frame-1 {
+        content-visibility: visible; /* https://developer.mozilla.org/en-US/docs/Web/CSS/content-visibility for å vise to slider-frames i banner på større skjerm enn 768. */
+    }
+
+    button.prev, button.next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(239, 235, 240, 0.5);
+        border: none;
+        padding: 15px;
+        color: black;
+        font-size: 15px;
+        cursor: pointer;
+        z-index: 2;
+        border-radius: 50%;
+        transition: background-color 0.3s;
+    }
+    
+    button.prev {
+        left: 10px;
+    }
+    
+    button.next {
+        right: 10px;
+    }
+
+    #banner-section button.prev:hover,
+    #banner-section button.next:hover {
+        color: var(--primary-color);
+    }
+
     .product-button:hover {
         background-color: gray;
     }
@@ -958,7 +1043,23 @@ details.collapse-materiale p {
         color: white;
     }
 
+    #produkt-form-button:hover {
+        background-color: #0056b3;
+    }
+
+    #produktside-info-hjerte-hover:hover {
+        color: red;
+    }
+
+    .breadcrumb a:hover {
+        text-decoration: underline;
+    }
+
     .reviewers-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    #products-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -1016,14 +1117,6 @@ details.collapse-materiale p {
         gap: 20px;
     }
 
-    .icons i {
-        transition: transform 0.3s ease;
-    }
-
-    .icons i:hover {
-        transform: scale(1.4);
-    }
-
     #banner-section {
         height: 600px;
     }
@@ -1079,24 +1172,8 @@ details.collapse-materiale p {
         text-align: left;
     }
 
-    .reviewers-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
     .footer-logo {
         text-align: left;
-    }
-
-    .breadcrumb a:hover {
-        text-decoration: underline;
-    }
-    
-    #produkt-form-button:hover {
-        background-color: #0056b3;
-    }
-
-    #produktside-info-hjerte-hover:hover {
-        color: red;
     }
 
     .produktside-small-images,
@@ -1143,4 +1220,23 @@ details.collapse-materiale p {
         width: 40%;
         margin-top: 0;
     }
+
+    .shoppingbag-seksjon {
+        padding: 0 25%;
+    }
+
+    .handlekurv-liste {
+        flex-direction: row;
+        gap: 2rem;
+    }
+
+    .shoppingbag-produktnavn {
+        margin-top: 4rem;
+    }
+
+    .shoppingbag-ikoner {
+        flex-direction: column;
+        margin-top: 4rem;
+    }
+
 }

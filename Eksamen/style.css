@@ -46,6 +46,9 @@ header {
 }
 
 .search-bar button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -53,9 +56,6 @@ header {
     right: 5px;
     height: 40px;
     width: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .search-bar button i {
@@ -74,9 +74,9 @@ header {
 
 .left-menu,
 .right-menu {
-    list-style: none;
     display: flex;
     flex-direction: column;
+    list-style: none;
     gap: 1em;
     padding: 0;
     text-align: center;
@@ -111,11 +111,11 @@ header {
 }
 
 .icons {
-    list-style: none;
     display: flex;
+    list-style: none;
+    flex-direction: row;
     gap: 1em;
     margin-bottom: 10px;
-    flex-direction: row;
     padding: 10px;
 }
 
@@ -255,24 +255,27 @@ header {
 #products-grid {
     display: grid;
     grid-template-columns: 1fr;
+    justify-items: center;
     gap: 1rem;
     list-style: none;
     margin: 0 1rem;
-    justify-items: center;
     max-width: 350px;
 }
 
 .product-card {
-    text-align: center;
-    width: 100%;
-    margin-bottom: 3em;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 3em;
     position: relative;
 }
 
 .heart-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 10px;
     right: 10px;
@@ -281,9 +284,6 @@ header {
     background-color: grey;
     width: 30px;
     height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     border-radius: 50%;
 }
 
@@ -312,13 +312,12 @@ header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-top: 10px;
     justify-content: flex-start;
+    margin-top: 10px;
     width: 100%;
 }
 
 .stars-icons {
-    display: flex;
     gap: 5px;
 }
 
@@ -791,6 +790,7 @@ details.collapse-materiale p {
     border-color: #cec8c8;
     border-width: 1px;
     padding: 1rem;
+    margin: 1rem 0;
 }
 
 .shoppingbag-stor-tekst {
@@ -890,6 +890,7 @@ details.collapse-materiale p {
     border-color: #cec8c8;
     border-width: 1px;
     padding: 1rem;
+    margin: 1rem 0;
 }
 
 #levering-tittel {

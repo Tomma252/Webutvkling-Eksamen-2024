@@ -35,7 +35,7 @@ header {
     margin-bottom: 10px;
 }
 
-.search-bar input[type="text"] {
+.search-bar input {
     padding: 10px;
     border: 2px solid #ccc;
     border-radius: 15px;
@@ -255,10 +255,11 @@ header {
 #products-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 1rem;
     list-style: none;
-    padding: 0;
+    margin: 0 1rem;
     justify-items: center;
+    max-width: 350px;
 }
 
 .product-card {
@@ -284,8 +285,6 @@ header {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .product-card img {
@@ -408,7 +407,7 @@ header {
 }
 
 .reviewers-list {
-    width: 250px;
+    width: 289px;
     flex-shrink: 0;
     border: 1px solid #ddd;
     padding: 15px;
@@ -809,6 +808,11 @@ details.collapse-materiale p {
     gap: 20px;
 }
 
+.handlekurv-liste a {
+    text-decoration: none;
+    color: black;
+}
+
 .handlekurv-liste img {
     width: 200px;
     height: 250px;
@@ -934,15 +938,20 @@ details.collapse-materiale p {
     border-style: none;
 }
 
+.levering-seksjon label {
+    font-weight: bold;
+}
+
+.levering-virkedager {
+    color: gray;
+    font-weight: bold;
+}
+
 @media (min-width: 768px) {
     header {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
-    }
-
-    .skip-link {
-        display: block;
     }
 
     .search-bar {
@@ -1038,6 +1047,11 @@ details.collapse-materiale p {
         background-color: gray;
     }
 
+    .heart-icon {
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
     .heart-icon:hover {
         background-color: red;
         color: white;
@@ -1060,6 +1074,7 @@ details.collapse-materiale p {
     }
 
     #products-grid {
+        max-width: 100%;
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -1087,6 +1102,10 @@ details.collapse-materiale p {
     .footer-socials ul {
         margin: 0 auto;
         display: inline-block;
+    }
+
+    .handlekurv-liste a:hover {
+        text-decoration: underline;
     }
 }
 

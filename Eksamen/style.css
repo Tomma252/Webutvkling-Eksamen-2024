@@ -259,7 +259,6 @@ header {
     gap: 1rem;
     list-style: none;
     margin: 0 1rem;
-    max-width: 350px;
 }
 
 .product-card {
@@ -270,6 +269,7 @@ header {
     width: 100%;
     margin-bottom: 3em;
     position: relative;
+    max-width: 350px;
 }
 
 .heart-icon {
@@ -492,7 +492,9 @@ footer p, footer span {
     margin-bottom: 0.5em;
 }
 
-.footer-større-tekst {
+.footer-større-tekst,
+.footer-større-tekst-snarveier,
+.footer-større-tekst-some {
     margin-bottom: 1em;
     font-size: 1em;
     text-transform: uppercase;
@@ -1101,11 +1103,25 @@ details.collapse-materiale p {
     .footer-kontakt ul, 
     .footer-snarveier ul, 
     .footer-socials ul {
-        margin: 0 auto;
+        margin: 0;
         display: inline-block;
     }
 
+    .footer-snarveier ul li {
+        padding: 0;
+        margin: 1rem 0;
+    }
+
+    .footer-snarveier ul li a {
+        padding: 0;
+    }
+
     .handlekurv-liste a:hover {
+        text-decoration: underline;
+    }
+
+    .navbar .menu li a:hover,
+    footer a:hover {
         text-decoration: underline;
     }
 }
@@ -1122,11 +1138,6 @@ details.collapse-materiale p {
 
     .navbar {
         gap: 30px;
-    }
-
-    .navbar .menu li a:hover,
-    footer a:hover {
-        text-decoration: underline;
     }
 
     .logo {
